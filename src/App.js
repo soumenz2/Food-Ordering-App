@@ -11,6 +11,9 @@ import AllBooking from "./AllBookings"
 import BookingComponent from "./CreateBooking";
 import Container from "./body";
 import Header from "./Header";
+import Aboutus from "./Aboutus";
+import Home from "./Home";
+import Contact from "./Contact";
 const App = () => {
   return (
     // <BrowserRouter>
@@ -56,10 +59,19 @@ const App = () => {
     //     </Routes>
     //   </div>
     // </BrowserRouter>
-    <>
+    <BrowserRouter>
+    <div>
       <Header />
-      <Container />
-    </>
+      <Routes>
+            <Route path="/" element={<Container />} />
+            <Route path="/home" element={<Container/>}/>
+            <Route path="/aboutus" element={<Aboutus />}/>
+            <Route path="/contact" element={<Contact />}/>
+           
+        </Routes>
+        </div>
+        </BrowserRouter>
+    
   );
 };
 
